@@ -20,13 +20,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 /**
- * ²¥·ÅÓ¦ÓÃµÄÔ­Ê¼×ÊÔ´ÎÄ¼ş(assets)
-1) Í¨¹ıContext.getAssets()·½·¨»ñµÃAssetManager¶ÔÏó
-2) Í¨¹ıAssetManager¶ÔÏóµÄopenFd(String name)·½·¨´ò¿ªÖ¸¶¨µÄÔ­Éú×ÊÔ´ÎÄ¼ş¼Ğ£¬·µ»ØÒ»¸öAssetFileDescriptor¶ÔÏó
-3) Í¨¹ıAssetFileDescriptorµÄgetFileDescriptor()µÃµ½Ò»¸öFileDescriptor¶ÔÏó
-4) Í¨¹ıpublic void setDataSource (FileDescriptor fd, long offset, long length)À´´´½¨MediaPlayer¶ÔÏó
-5) µ÷ÓÃMediaPlayer.prepare()·½·¨×¼±¸ÒôÆµ
-6) µ÷ÓÃMediaPlayerµÄstart()¡¢pause()¡¢stop()µÈ·½·¨¿ØÖÆ
+ * æ’­æ”¾åº”ç”¨çš„åŸå§‹èµ„æºæ–‡ä»¶(assets)
+1) é€šè¿‡Context.getAssets()æ–¹æ³•è·å¾—AssetManagerå¯¹è±¡
+2) é€šè¿‡AssetManagerå¯¹è±¡çš„openFd(String name)æ–¹æ³•æ‰“å¼€æŒ‡å®šçš„åŸç”Ÿèµ„æºæ–‡ä»¶å¤¹ï¼Œè¿”å›ä¸€ä¸ªAssetFileDescriptorå¯¹è±¡
+3) é€šè¿‡AssetFileDescriptorçš„getFileDescriptor()å¾—åˆ°ä¸€ä¸ªFileDescriptorå¯¹è±¡
+4) é€šè¿‡public void setDataSource (FileDescriptor fd, long offset, long length)æ¥åˆ›å»ºMediaPlayerå¯¹è±¡
+5) è°ƒç”¨MediaPlayer.prepare()æ–¹æ³•å‡†å¤‡éŸ³é¢‘
+6) è°ƒç”¨MediaPlayerçš„start()ã€pause()ã€stop()ç­‰æ–¹æ³•æ§åˆ¶
  
 AssetFileDescriptor fileDescriptor = assetManager.openFd("a2.mp3");
 mediaPlayer = new MediaPlayer();
@@ -59,7 +59,7 @@ public class SensorEventActivity extends Activity implements SensorEventListener
 //		normal.setOnClickListener(this);
 //		receiver.setOnClickListener(this);
 		try {
-//			FileInputStream file = (FileInputStream) assetManager.open("music/huluwan.mp3");
+//			private FileInputStream file = (FileInputStream) assetManager.open("music/huluwan.mp3");
 //			mPlayer.reset();
 //			mPlayer.setDataSource(file.getFD());
 //			AssetFileDescriptor afd = assetManager.openFd("huluwan.mp3");
@@ -115,7 +115,7 @@ public class SensorEventActivity extends Activity implements SensorEventListener
 		float range = event.values[0];
 
 		if(range == sensor.getMaximumRange()) {
-			Toast.makeText(this, "Õı³£Ä£Ê½", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "æ­£å¸¸æ¨¡å¼", Toast.LENGTH_SHORT).show();
 			audioManager.setMode(AudioManager.MODE_NORMAL);
 //			
 //			try {
@@ -146,7 +146,7 @@ public class SensorEventActivity extends Activity implements SensorEventListener
 //				Log.e(SensorEventActivity.class.getSimpleName(), ""+e.getMessage());
 //			}
 		} else {
-			Toast.makeText(this, "ÌıÍ²Ä£Ê½", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "å¬ç­’æ¨¡å¼", Toast.LENGTH_SHORT).show();
 			audioManager.setMode(AudioManager.MODE_IN_CALL);
 			
 //			try {
@@ -205,7 +205,7 @@ public class SensorEventActivity extends Activity implements SensorEventListener
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.normal:
-			Toast.makeText(this, "Õı³£Ä£Ê½", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "æ­£å¸¸æ¨¡å¼", Toast.LENGTH_SHORT).show();
 			audioManager.setMode(AudioManager.MODE_NORMAL);
 			try {
 //				FileInputStream file = (FileInputStream) assetManager.open("music/huluwan.mp3");
@@ -236,7 +236,7 @@ public class SensorEventActivity extends Activity implements SensorEventListener
 			}
 			break;
 		case R.id.receiver:
-			Toast.makeText(this, "ÌıÍ²Ä£Ê½", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "å¬ç­’æ¨¡å¼", Toast.LENGTH_SHORT).show();
 			audioManager.setMode(AudioManager.MODE_IN_CALL);
 			try {
 //				mPlayer.reset();
